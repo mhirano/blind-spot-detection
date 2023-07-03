@@ -1,0 +1,112 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <div class="hero-container">
+
+        <div class="hero-content wow fadeIn">
+
+          <div style="padding: 20px 0px 0px 0px;">
+            <h2 class="text-center"><span style="display: inline-block;">High-Speed Recognition of Pedestrians out of Blind Spot</span> <span span style="display: inline-block;">with Pre-detection of Potentially Dangerous Regions</span></h2>
+          </div>
+          <div style="padding: 10px 0px 0px 0px;">
+            <div style="text-align:center;font-size:14pt;">
+              <div style="padding: 5px 0px 5px 0px">
+                <a href="http://www.hfr.iis.u-tokyo.ac.jp/members/zhou/index-e.html">Jiacheng Zhou<sup>&#8224</sup></a>,
+                <a href="http://www.hfr.iis.u-tokyo.ac.jp/members/hirano/index-e.html">Masahiro Hirano<sup>&#8224</sup></a>,
+                <a href="http://www.hfr.iis.u-tokyo.ac.jp/members/yamakawa/index-e.html">Yuji Yamakawa<sup>&#8224</sup></a>,
+              </div>
+              <div style="padding: 5px 0px 5px 0px">
+                <span><sup>&#8224</sup> The University of Tokyo</span>
+              </div>
+              <div style="padding: 5px 0px 5px 0px">
+                <div class="venue text-center"><b>IEEE Conference on Intelligent Transportation Systems 2022 (ITSC 2022)</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-buttons">
+
+            {% if site.twitter_username != '' %}
+              <a href="./res/zhou_ITSC2022.pdf"><button class="btn btn-default btn-lg"><i class="fa fa-paperclip fa-lg"></i>Paper (Author's copy)</button></a>
+            {% endif %}
+            {% if site.github_username != '' %}
+              <a href="https://link-to-youtube/"><button class="btn btn-default btn-lg"><i class="fa fa-youtube-play fa-lg"></i>YouTube</button></a>
+            {% endif %}
+
+          </div>
+
+          <br>
+          <div style="width:80%;margin-left:auto;margin-right:auto;">
+          <img class="img-responsive" src="./res/eyecatch.png" title="title">
+          </div>
+          <br>
+
+          <div class="section">
+            <h3>Abstract</h3>
+            <hr>
+            <p>We present a novel approach to detect pedestrians coming out of blind spots as early as possible. To reduce the delay after pedestrians appear, we perform pre-detection of potentially dangerous regions (blind spots) before arriving at the location. This pre-detection allows for a significant reduction in reaction time and improves detection accuracy for pedestrians by limiting the search region of the pedestrians. We used a monocular camera and developed an algorithm for detecting blind spots caused by obstacles blocking the driver's sight, based on the depth information obtained from a monocular depth estimation method. We evaluated the proposed method on a KITTI sequence of a complex street scene. The experiment demonstrated that the proposed method detected blind spots and the sudden appearance of pedestrians nicely, and the reaction time was significantly improved by the pre-detection.
+            </p>
+          </div>
+          <br>
+          <div class="section">
+            <h3>How to detect blind spot?</h3>
+            <hr>
+            <p>We leverage depth maps to locate blind spots. A blind spot can be characterized by a distinct change in depth. We first search for the distinct depth change on both sides and identify potentially dangerous regions as a box around the edge where the depth change exists. As this method does not require super accurate depth estimation accuracy at the same level as LiDARs, a depth map can be obtained by a monocular depth estimation method, <a href="https://arxiv.org/abs/1806.01260">MonoDepth2 [C. Godard+, ICCV2019]</a>. After the bind spots are located, they are predicted under a constant motion assumption in the subsequent frames.
+            </p>
+            <div class="row align-items-center">
+              <div class="col justify-content-center text-center">
+                <video width="80%" playsinline="" autoplay="" loop="" preload="" muted="">
+                  <source src="./res/blind-spot-detection.webm" type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="section">
+            <h3>Demo</h3>
+            <hr />
+            <p>Pedestrian detection was only performed in the blind spots. Notice that pedestrians were detected as soon as they appeared in the images even if only half of the bodies were visible.</p>
+            <div class="row align-items-center">
+              <div class="col justify-content-center text-center">
+                <video width="80%" playsinline="" autoplay="" loop="" preload="" muted="">
+                  <source src="./res/demo.webm" type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="section">
+            <h3>YouTube</h3>
+            <hr />
+            <iframe class="youtube-video" src="https://www.youtube.com/embed/5kW0RtcJZC8" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <br>
+          <div class="section">
+            <h3>Citation</h3>
+            <hr />
+            <div style="text-align:left;font-size:8px;">
+              <pre><code>
+@inproceedings{zhou22bsd,
+  title={High-Speed Recognition of Pedestrians out of Blind Spot with Pre-detection of Potentially Dangerous Regions},
+  author={Jiacheng Zhou, Masahiro Hirano, Yuji Yamakawa},
+  booktitle={Proceedings of the IEEE International Conference on Intelligent Transportation Systems (ITSC)},
+  year={2022}
+}
+                </code></pre>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
