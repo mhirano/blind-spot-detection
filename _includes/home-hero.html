@@ -52,7 +52,7 @@
           </div>
           <br>
           <div class="section">
-            <h3>How to detect blind spot?</h3>
+            <h3>How to detect blind spots?</h3>
             <hr>
             <p>We leverage depth maps to locate blind spots. A blind spot can be characterized by a distinct change in depth. We first search for the distinct depth change on both sides and identify potentially dangerous regions as a box around the edge where the depth change exists. As this method does not require super accurate depth estimation accuracy at the same level as LiDARs, a depth map can be obtained by a monocular depth estimation method, <a href="https://arxiv.org/abs/1806.01260">MonoDepth2 [C. Godard+, ICCV2019]</a>. After the bind spots are located, they are predicted under a constant motion assumption in the subsequent frames.
             </p>
